@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Nilai Rata-Rata</title>
+    <link rel="stylesheet" href="../src/css/menghitung.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Kalkulator Nilai Rata-Rata</h1>
+      <form id="averageCalculator">
+        <div class="sembunyi" id="semester1">
+          <h2>Semester 1</h2>
+          <input type="number" placeholder="Nilai MTK" id="mtk1" required/>
+          <input type="number" placeholder="Nilai Agama" id="agama1" required/>
+          <input type="number" placeholder="Nilai Indonesia" id="Indonesia1" required/>
+          <input type="number" placeholder="Nilai PPKN" id="PPKN1" required/><br/>
+          <input type="number" placeholder="Nilai IPA" id="ipa1" required/>
+          <input type="number" placeholder="Nilai IPS" id="ips1" required/>
+          <input type="number" placeholder="Nilai Inggris" id="inggris1" required/>
+        </div>
+
+        <div class="sembunyi" id="semester2">
+          <h2>Semester 2</h2>
+          <input type="number" placeholder="Nilai MTK" id="mtk2" required/>
+          <input type="number" placeholder="Nilai Agama" id="agama2" required/>
+          <input type="number" placeholder="Nilai Indonesia" id="Indonesia2" required/>
+          <input type="number" placeholder="Nilai PPKN" id="PPKN2" required/><br/>
+          <input type="number" placeholder="Nilai IPA" id="ipa2" required/>
+          <input type="number" placeholder="Nilai IPS" id="ips2" required/>
+          <input type="number" placeholder="Nilai Inggris" id="inggris2" required/>
+        </div>
+
+        <div class="sembunyi" id="semester3">
+          <h2>Semester 3</h2>
+          <input type="number" placeholder="Nilai MTK" id="mtk3" required/>
+          <input type="number" placeholder="Nilai Agama" id="agama3" required/>
+          <input type="number" placeholder="Nilai Indonesia" id="Indonesia3" required/>
+          <input type="number" placeholder="Nilai PPKN" id="PPKN3" required/><br/>
+          <input type="number" placeholder="Nilai IPA" id="ipa3" required/>
+          <input type="number" placeholder="Nilai IPS" id="ips3" required/>
+          <input type="number" placeholder="Nilai Inggris" id="inggris3" required/>
+        </div>
+
+        <div class="sembunyi" id="semester4">
+          <h2>Semester 4</h2>
+          <input type="number" placeholder="Nilai MTK" id="mtk4" required/>
+          <input type="number" placeholder="Nilai Agama" id="agama4" required/>
+          <input type="number" placeholder="Nilai Indonesia" id="Indonesia4" required/>
+          <input type="number" placeholder="Nilai PPKN" id="PPKN4" required/><br/>
+          <input type="number" placeholder="Nilai IPA" id="ipa4" required/>
+          <input type="number" placeholder="Nilai IPS" id="ips4" required/>
+          <input type="number" placeholder="Nilai Inggris" id="inggris4" required/>
+        </div>
+
+        <div class="sembunyi" id="semester5">
+          <h2>Semester 5</h2>
+          <input type="number" placeholder="Nilai MTK" id="mtk5" required/>
+          <input type="number" placeholder="Nilai Agama" id="agama5" required/>
+          <input type="number" placeholder="Nilai Indonesia" id="Indonesia5" required/>
+          <input type="number" placeholder="Nilai PPKN" id="PPKN5"required/><br/>
+          <input type="number" placeholder="Nilai IPA" id="ipa5" required/>
+          <input type="number" placeholder="Nilai IPS" id="ips5" required/>
+          <input type="number" placeholder="Nilai Inggris" id="inggris5"required/>
+        </div>
+      </form>
+      <div class="switch-page">
+        <button onclick="toggleVisibility1()">Semester 1</button>
+        <button onclick="toggleVisibility2()">Semester 2</button>
+        <button onclick="toggleVisibility3()">Semester 3</button>
+        <button onclick="toggleVisibility4()">Semester 4</button>
+        <button onclick="toggleVisibility5()">Semester 5</button>
+      </div>
+    </div>
+
+    <div class="container" id="hasil">
+      <h2>Hasil</h2>
+      <table style="margin: auto;" border="1px">
+        <th>Hasil Rata-ratanya</th>
+        <tr>
+          <td>
+            <div id="hasil1"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="hasil2"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="hasil3"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="hasil4"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="hasil5"></div>
+          </td>
+        </tr>
+      </table><br>
+
+      <button type="button" onclick="hitungRatasemua()"> Hitung Rata-Rata </button><br><br>
+      <div id="hasilsemua"></div>
+    </div>
+    <script>
+      function toggleVisibility1() {
+        var semester5 = document.getElementById("semester5");
+        var semester4 = document.getElementById("semester4");
+        var semester3 = document.getElementById("semester3");
+        var semester2 = document.getElementById("semester2");
+        var semester1 = document.getElementById("semester1");
+        if (semester5.classList.contains("sembunyi")) {
+          semester1.classList.remove("sembunyi");
+          semester2.classList.add("sembunyi");
+          semester3.classList.add("sembunyi");
+          semester4.classList.add("sembunyi");
+          semester5.classList.add("sembunyi");
+        } else {
+          semester5.classList.add("sembunyi");
+          semester4.classList.add("sembunyi");
+          semester3.classList.add("sembunyi");
+          semester2.classList.add("sembunyi");
+        }
+      }
+      function toggleVisibility2() {
+        var semester5 = document.getElementById("semester5");
+        var semester4 = document.getElementById("semester4");
+        var semester3 = document.getElementById("semester3");
+        var semester2 = document.getElementById("semester2");
+        var semester1 = document.getElementById("semester1");
+        if (semester5.classList.contains("sembunyi")) {
+          semester2.classList.remove("sembunyi");
+          semester1.classList.add("sembunyi");
+          semester5.classList.add("sembunyi");
+          semester4.classList.add("sembunyi");
+          semester3.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+        } else {
+          semester5.classList.add("sembunyi");
+          semester4.classList.add("sembunyi");
+          semester3.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+        }
+      }
+      function toggleVisibility3() {
+        var semester5 = document.getElementById("semester5");
+        var semester4 = document.getElementById("semester4");
+        var semester3 = document.getElementById("semester3");
+        var semester2 = document.getElementById("semester2");
+        var semester1 = document.getElementById("semester1");
+        if (semester5.classList.contains("sembunyi")) {
+          semester2.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+          semester3.classList.remove("sembunyi");
+          semester5.classList.add("sembunyi");
+          semester4.classList.add("sembunyi");
+        } else {
+          semester5.classList.add("sembunyi");
+          semester4.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+        }
+      }
+      function toggleVisibility4() {
+        var semester5 = document.getElementById("semester5");
+        var semester4 = document.getElementById("semester4");
+        var semester3 = document.getElementById("semester3");
+        var semester2 = document.getElementById("semester2");
+        var semester1 = document.getElementById("semester1");
+        if (semester5.classList.contains("sembunyi")) {
+          semester2.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+          semester4.classList.remove("sembunyi");
+          semester5.classList.add("sembunyi");
+          semester3.classList.add("sembunyi");
+        } else {
+          semester5.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+          semester4.classList.remove("sembunyi");
+        }
+      }
+      function toggleVisibility5() {
+        var semester5 = document.getElementById("semester5");
+        var semester4 = document.getElementById("semester4");
+        var semester3 = document.getElementById("semester3");
+        var semester2 = document.getElementById("semester2");
+        var semester1 = document.getElementById("semester1");
+        if (semester5.classList.contains("sembunyi")) {
+          semester2.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+          semester4.classList.add("sembunyi");
+          semester5.classList.remove("sembunyi");
+          semester3.classList.add("sembunyi");
+        } else {
+          semester5.classList.add("sembunyi");
+          semester1.classList.add("sembunyi");
+        }
+      }
+      function hitungRatasemua() {
+        var mtk1 = parseFloat(document.getElementById("mtk1").value);
+        var agama1 = parseFloat(document.getElementById("agama1").value);
+        var Indonesia1 = parseFloat(document.getElementById("Indonesia1").value);
+        var PPKN1 = parseFloat(document.getElementById("PPKN1").value);
+        var ipa1 = parseFloat(document.getElementById("ipa1").value);
+        var ips1 = parseFloat(document.getElementById("ips1").value);
+        var inggris1 = parseFloat(document.getElementById("inggris1").value);
+
+        var totalNilai1 = mtk1 + agama1 + Indonesia1 + PPKN1 + ipa1 + ips1 + inggris1;
+        var rataRata1 = totalNilai1 / 7;
+
+        var hasil1 = document.getElementById("hasil1");
+        hasil1.innerHTML = "Nilai rata-rata semester 1 : " + rataRata1.toFixed(2);
+
+        var mtk2 = parseFloat(document.getElementById("mtk2").value);
+        var agama2 = parseFloat(document.getElementById("agama2").value);
+        var Indonesia2 = parseFloat(document.getElementById("Indonesia2").value);
+        var PPKN2 = parseFloat(document.getElementById("PPKN2").value);
+        var ipa2 = parseFloat(document.getElementById("ipa2").value);
+        var ips2 = parseFloat(document.getElementById("ips2").value);
+        var inggris2 = parseFloat(document.getElementById("inggris2").value);
+
+        var totalNilai2 = mtk2 + agama2 + Indonesia2 + PPKN2 + ipa2 + ips2 + inggris2;
+        var rataRata2 = totalNilai2 / 7;
+
+        var hasil2 = document.getElementById("hasil2");
+        hasil2.innerHTML = "Nilai rata-rata semester 2 : " + rataRata2.toFixed(2);
+
+        var mtk3 = parseFloat(document.getElementById("mtk3").value);
+        var agama3 = parseFloat(document.getElementById("agama3").value);
+        var Indonesia3 = parseFloat(document.getElementById("Indonesia3").value);
+        var PPKN3 = parseFloat(document.getElementById("PPKN3").value);
+        var ipa3 = parseFloat(document.getElementById("ipa3").value);
+        var ips3 = parseFloat(document.getElementById("ips3").value);
+        var inggris3 = parseFloat(document.getElementById("inggris3").value);
+
+        var totalNilai3 = mtk3 + agama3 + Indonesia3 + PPKN3 + ipa3 + ips3 + inggris3;
+        var rataRata3 = totalNilai3 / 7;
+
+        var hasil3 = document.getElementById("hasil3");
+        hasil3.innerHTML = "Nilai rata-rata semester 3 : " + rataRata3.toFixed(2);
+
+        var mtk4 = parseFloat(document.getElementById("mtk4").value);
+        var agama4 = parseFloat(document.getElementById("agama4").value);
+        var Indonesia4 = parseFloat(document.getElementById("Indonesia4").value);
+        var PPKN4 = parseFloat(document.getElementById("PPKN4").value);
+        var ipa4 = parseFloat(document.getElementById("ipa4").value);
+        var ips4 = parseFloat(document.getElementById("ips4").value);
+        var inggris4 = parseFloat(document.getElementById("inggris4").value);
+
+        var totalNilai4 = mtk4 + agama4 + Indonesia4 + PPKN4 + ipa4 + ips4 + inggris4;
+        var rataRata4 = totalNilai4 / 7;
+
+        var hasil4 = document.getElementById("hasil4");
+        hasil4.innerHTML = "Nilai rata-rata semester 4 : " + rataRata4.toFixed(2);
+
+        var mtk5 = parseFloat(document.getElementById("mtk5").value);
+        var agama5 = parseFloat(document.getElementById("agama5").value);
+        var Indonesia5 = parseFloat(document.getElementById("Indonesia5").value);
+        var PPKN5 = parseFloat(document.getElementById("PPKN5").value);
+        var ipa5 = parseFloat(document.getElementById("ipa5").value);
+        var ips5 = parseFloat(document.getElementById("ips5").value);
+        var inggris5 = parseFloat(document.getElementById("inggris5").value);
+
+        var totalNilai5 = mtk5 + agama5 + Indonesia5 + PPKN5 + ipa5 + ips5 + inggris5;
+        var rataRata5 = totalNilai5 / 7;
+
+        var hasil5 = document.getElementById("hasil5");
+        hasil5.innerHTML = "Nilai rata-rata semester 5 : " + rataRata5.toFixed(2);
+
+        var totalNilaisemua = rataRata1 + rataRata2 + rataRata3 + rataRata4 + rataRata5;
+        var rataRatasemua = totalNilaisemua / 5;
+
+        var semua = document.getElementById("hasilsemua");
+        semua.innerHTML = "Nilai rata-rata semester 1 sampai 5 : " + rataRatasemua.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
